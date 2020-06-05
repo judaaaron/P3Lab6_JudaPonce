@@ -8,6 +8,7 @@ class Jinete : public Guerrero
 		Jinete();
 		int getFuerzaJinete();
 		void setFuerzaJinete(int);
+		void Atacar();
 		~Jinete();
 	protected:
 	int fuerza_ataque = 30;

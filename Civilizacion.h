@@ -1,6 +1,13 @@
 #ifndef CIVILIZACION_H
 #define CIVILIZACION_H
-#include<string>
+#include <vector>
+#include <string>
+#include "Habitante.h"
+#include "Aldeano.h"
+#include "Guerrero.h"
+#include "Jinete.h"
+#include "Arqueros.h"
+#include "Caballeros.h"
 
 using namespace std;
 
@@ -26,14 +33,14 @@ class Civilizacion
 		void setCasas(int);
 		void setCuarteles(int);
 		void setEstablos(int);
-		
+		vector<Habitante*> getHabitantes();
 		
 		~Civilizacion();
 	protected:
 		string nombre;
-		int cantidadMadera = 50, cantidadOro = 50, cantidadAlimento = 50;
-	//	vector <Habitante> habitantes;
-		int numeroHabitantes = 0, numeroCasas = 2 ,numeroCuarteles = 0,numerosEstablos = 0;
+		int cantidadMadera = 0, cantidadOro = 0, cantidadAlimento = 0;
+		vector <Habitante*> habitantes;
+		int numeroHabitantes = 0, numeroCasas = 0 ,numeroCuarteles = 0,numerosEstablos = 0;
 };
 
 #endif

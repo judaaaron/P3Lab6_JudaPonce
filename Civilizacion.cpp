@@ -58,8 +58,22 @@ void Civilizacion:: setEstablos(int establos){
 Civilizacion::Civilizacion(string name)
 {
 	this->nombre=name;
+	this->numeroCasas += 2;
+	this->cantidadMadera = 50;
+	this->cantidadOro = 50;
+	this->cantidadAlimento = 50;	
+	
+	habitantes.push_back(new Aldeano());
+	habitantes.push_back(new Aldeano());
+	habitantes.push_back(new Aldeano());
+	habitantes.push_back(new Aldeano());
+	habitantes.push_back(new Aldeano());
+	habitantes.push_back(new Jinete());
+	this->numeroHabitantes += 6;
 
 }
+
+
 
 Civilizacion::~Civilizacion()
 {

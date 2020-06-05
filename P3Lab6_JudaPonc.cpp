@@ -1,8 +1,16 @@
 #include <iostream>
 #include<string>
 #include<vector>
+#include"Civilizacion.h"
+#include"Habitante.h"
+#include"Guerrero.h"
+#include"Jinete.h"
+#include"Arqueros.h"
+#include"Caballeros.h"
 
 using namespace std;
+
+vector<Civilizacion*>civilizacion;
 int menu();
 
 int main(int argc, char** argv) {
@@ -41,19 +49,16 @@ int main(int argc, char** argv) {
 
 int menu(){
 	int opcion=0;
-	while(opcion < 1 || opcion > 6){
+	while(opcion < 1 || opcion > 3){
 		
 		cout<<"         MENU "<<endl
-			<<"1. Sumar 2 numeros"<<endl
-			<<"2. Restar 2 numeros"<<endl
-			<<"3. Multiplicar 2 numeros"<<endl
-			<<"4. Dividir 2 numeros"<<endl
-			<<"5. Potencia"<<endl
-			<<"6. Salir del programa"<<endl
-			<<"Ingrese una opcion entre 1 y 5: ";
+			<<"1. Crear civilizacion"<<endl
+			<<"2. Jugar"<<endl
+			<<"3. Salir"<<endl
+			<<"Ingrese una opcion entre 1 y 3: ";
 			cin>>opcion;
 			cout<<endl;
-			if(opcion >= 1 && opcion <= 6)
+			if(opcion >= 1 && opcion <= 3)
 				break;
 			else
 				cout<<endl<<"Opcion incorrecta, elija nuevamente "<<endl;	
