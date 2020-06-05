@@ -8,24 +8,24 @@ string Civilizacion:: getNombre(){
 	return this->nombre;
 }
 int Civilizacion:: getCMadera(){
-	return this->cantidadMadera;
+	return this->Madera;
 }
 int Civilizacion::getCOro(){
-	return this->cantidadOro;
+	return this->Oro;
 }
 int Civilizacion:: getCAlimento(){
-	return this->cantidadAlimento;
+	return this->Alimento;
 	
 }
 void Civilizacion::setCMadera(int wood){
-	this->cantidadMadera=wood;
+	this->Madera=wood;
 }
 void Civilizacion::setCOro(int gold){
-	this->cantidadOro=gold;
+	this->Oro=gold;
 	
 }
 void Civilizacion:: setCAlimento(int food){
-this->cantidadAlimento=food;	
+this->Alimento=food;	
 }
 		
 int Civilizacion::getHabitantes(){
@@ -45,23 +45,23 @@ void Civilizacion::setHabitantes(int habi){
 	
 }
 void Civilizacion::setCasas(int houses){
-this->numeroCasas=houses;	
+this->numeroCasas+=houses;	
 }
 void Civilizacion::setCuarteles(int cuarteles){
-	this->numeroCuarteles=cuarteles;
+	this->numeroCuarteles+=cuarteles;
 	
 }
 void Civilizacion:: setEstablos(int establos){
-	this->numerosEstablos=establos;
+	this->numerosEstablos+=establos;
 }
 
 Civilizacion::Civilizacion(string name)
 {
 	this->nombre=name;
 	this->numeroCasas += 2;
-	this->cantidadMadera = 50;
-	this->cantidadOro = 50;
-	this->cantidadAlimento = 50;	
+	this->Madera = 50;
+	this->Oro = 50;
+	this->Alimento = 50;	
 	
 	habitantes.push_back(new Aldeano());
 	habitantes.push_back(new Aldeano());
@@ -71,6 +71,16 @@ Civilizacion::Civilizacion(string name)
 	habitantes.push_back(new Jinete());
 	this->numeroHabitantes += 6;
 
+}
+
+void Civilizacion::pagaMadera(int price){
+	this->Madera -= price;
+}
+void Civilizacion:: pagaOro(int price2){
+	this->Oro-=price2;
+}
+void Civilizacion:: pagaAlimento(int price3){
+this->Alimento-=price3;	
 }
 
 

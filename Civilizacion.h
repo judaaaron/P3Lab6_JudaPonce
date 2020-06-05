@@ -33,12 +33,15 @@ class Civilizacion
 		void setCasas(int);
 		void setCuarteles(int);
 		void setEstablos(int);
+		void pagaMadera(int);
+		void pagaOro(int);
+		void pagaAlimento(int);
 		//vector<Habitante*> getHabitantes();
 		
 		~Civilizacion();
 	protected:
 		string nombre;
-		int cantidadMadera = 0, cantidadOro = 0, cantidadAlimento = 0;
+		int Madera = 0, Oro = 0, Alimento = 0;
 		vector <Habitante*> habitantes;
 		int numeroHabitantes = 0, numeroCasas = 0 ,numeroCuarteles = 0,numerosEstablos = 0;
 };
