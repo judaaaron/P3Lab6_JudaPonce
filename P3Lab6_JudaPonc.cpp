@@ -7,6 +7,7 @@
 #include"Jinete.h"
 #include"Arqueros.h"
 #include"Caballeros.h"
+#include"Aldeano.h"
 
 using namespace std;
 
@@ -67,33 +68,75 @@ int main(int argc, char** argv) {
 						
 						case 1:{
 						if (civilizacion[civil]->getHabitantes() <=capacidad){
-							if (civilizacion[civil]->getCAlimento() >= 25){
-								toAdd.push_back(new Aldeano());
-								cout << "Se esta creando un aldeano..." << endl;
-								civilizacion[civil]->pagaAlimento(25);
-							}else {
+							if (civilizacion[civil]->getCAlimento() < 25){
 								cout <<"Recursos insuficientes para crear aldeano";
+							}else {
+								toAdd.push_back(new Aldeano());
+								cout << "Aldeando en creacion" << endl;
+								civilizacion[civil]->pagaAlimento(25);
 							}
 						
 						} else {
-							cout << "Capacidad maxima de habitantes, ya no se puede agregar" << endl;
+							cout << "Capacidad maxima de habitantes, ya no se puede agregar mas :(" << endl;
 						}
 							
 							break;
 						}
 						
 						case 2:{
+								if (civilizacion[civil]->getHabitantes() <=capacidad){
+									if(civilizacion[civil]->getCMadera()<5 && civilizacion[civil]->getCOro()<20 && civilizacion[civil]->getCAlimento()<75){
+										cout<<"Recursos insuficientes para crear jinete"<<endl;
+									}else{
+										toAdd.push_back(new Jinete());
+										cout<<"Jinete en creacion"<<endl;
+										civilizacion[civil]->pagaOro(20);
+										civilizacion[civil]->pagaMadera(20);
+										civilizacion[civil]->pagaAlimento(75);
+									}
+								}else{
+										cout<<"Capacidad maxima de habitantes, ya no se puede agregar :("<<endl;
+	
+							}
 							
 							break;
 						}
 						
 						case 3:{
+							if (civilizacion[civil]->getHabitantes() <= capacidad){
+								if(civilizacion[civil]->getCMadera()<10 && civilizacion[civil]->getCOro()<10 && civilizacion[civil]->getCAlimento()<50){
+									cout<<"Recursos insuficientes para crear arquero"<<endl;
+								}else{
+									toAdd.push_back(new Arqueros());
+									cout<<"Arquero en creacion"<<endl;
+									civilizacion[civil]->pagaMadera(10);
+									civilizacion[civil]->pagaOro(10);
+									civilizacion[civil]->pagaAlimento(50);
+									
+								}
+								
+							}else{
+								cout<<"Capacidad maxima de habitantes, ya no se puede agregar :("<<endl;
+							}
 							
 							
 							break;
 						}
 						
 						case 4:{
+							if (civilizacion[civil]->getHabitantes() <= capacidad){
+								if(civilizacion[civil]->getCMadera()< 5 && civilizacion[civil]->getCOro() < 15 && civilizacion[civil]->getCAlimento()<50){
+									cout<<"Recursos insuficientes para crear caballero"<<endl;
+								}else{
+									toAdd.push_back(new Caballeros());
+									cout<<"Caballero en creacion"<<endl;
+									civilizacion[civil]->pagaMadera(5);
+									civilizacion[civil]->pagaOro(15);
+									civilizacion[civil]->pagaAlimento(50);
+								}
+							}else{
+								cout<<"Capacidad maxima de habitantes, ya no se puede agregar :("<<endl;
+							}
 							
 							break;
 						}
@@ -138,6 +181,27 @@ int main(int argc, char** argv) {
 						}
 						
 						case 9:{
+							for(int i=0; i< toAdd.size(); i++){
+								Aldeano* aldeanoo = dynamic_cast<Aldeano*>(toAdd[i]);
+								if(aldeanoo==0){
+									Jinete* jinetee = dynamic_cast<Jinete*>(toAdd[i]);
+									if(jinetee==0){
+										Arqueros* arqueroo = dynamic_cast<Arqueros*>(toAdd[i]);
+										if(arqueroo==0){
+											Caballeros* caballeroo = dynamic_cast<Caballeros*>(toAdd[i]);
+											if(caballeroo!=0){
+												toAdd[i]->reloj();
+												if (toAdd[i]->getTiempo() == 4){
+													civilizacion[civil]->getHola().push_back(toAdd[i]);
+													cout << "Caballero creado exitosamente" << endl;
+													delete toAdd[i];
+													//civilizaciones[u]->getHabitantes().push_back(pendientes[i]);
+													}	
+											}
+										}
+									}
+								}
+							}
 							
 							break;
 						}

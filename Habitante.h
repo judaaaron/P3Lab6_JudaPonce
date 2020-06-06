@@ -7,10 +7,12 @@ class Habitante
 		Habitante();
 		int getValorVida();
 		void setValorVida(int);
+		int getTiempo();
+		void reloj();
 		virtual ~Habitante();
 	protected:
 		int valorVida=100;
-		int hora;
+		int hora=0;
 };
 
 #endif

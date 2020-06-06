@@ -1,5 +1,6 @@
 #include "Civilizacion.h"
 
+
 Civilizacion::Civilizacion()
 {
 }
@@ -83,6 +84,9 @@ void Civilizacion:: pagaAlimento(int price3){
 this->Alimento-=price3;	
 }
 
+vector<Habitante*> Civilizacion::getHola(){
+	return this->habitantes;
+}
 
 
 Civilizacion::~Civilizacion()

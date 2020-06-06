@@ -10,6 +10,9 @@ int Jinete::getFuerzaJinete(){
 void Jinete::setFuerzaJinete(int forza){
 	this->fuerza_ataque=forza;
 }
+void Jinete::Atacar(){
+	
+}
 Jinete::~Jinete()
 {
 }

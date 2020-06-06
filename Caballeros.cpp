@@ -11,6 +11,10 @@ int Caballeros:: setFuerzCaballeros(int fuerza){
 	
 }
 
+void Caballeros::Atacar(){
+	
+}
+
 Caballeros::~Caballeros()
 {
 }

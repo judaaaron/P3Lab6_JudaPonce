@@ -24,7 +24,6 @@ class Civilizacion
 		void setCMadera(int);
 		void setCOro(int);
 		void setCAlimento(int);
-		
 		int getHabitantes();
 		int getCasas();
 		int getCuarteles();
@@ -36,7 +35,8 @@ class Civilizacion
 		void pagaMadera(int);
 		void pagaOro(int);
 		void pagaAlimento(int);
-		//vector<Habitante*> getHabitantes();
+		
+		vector<Habitante*> getHola();
 		
 		~Civilizacion();
 	protected:

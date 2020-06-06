@@ -10,6 +10,10 @@ void Arqueros:: setFuerzaArqueros(int fuerza){
 	this->fuerza_ataque=fuerza;
 }
 
+void Arqueros::Atacar(){
+	
+}
+
 Arqueros::~Arqueros()
 {
 }

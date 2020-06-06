@@ -7,6 +7,7 @@ class Arqueros : public Guerrero
 		Arqueros();
 		int getFuerzaArqueros();
 		void setFuerzaArqueros(int);
+		void Atacar();
 		~Arqueros();
 	protected:
 	int fuerza_ataque = 20;

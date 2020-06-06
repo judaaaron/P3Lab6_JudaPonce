@@ -12,6 +12,14 @@ void Habitante:: setValorVida(int life){
 	this->valorVida=life;
 }
 
+int Habitante::getTiempo(){
+	return this->hora;
+}
+
+void Habitante::reloj(){
+	this->hora++;
+}
+
 Habitante::~Habitante()
 {
 }
