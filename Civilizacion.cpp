@@ -89,6 +89,9 @@ vector<Habitante*> Civilizacion::getHola(){
 }
 
 
+
+
+
 Civilizacion::~Civilizacion()
 {
 }

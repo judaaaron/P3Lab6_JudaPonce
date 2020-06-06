@@ -35,7 +35,6 @@ class Civilizacion
 		void pagaMadera(int);
 		void pagaOro(int);
 		void pagaAlimento(int);
-		
 		vector<Habitante*> getHola();
 		
 		~Civilizacion();

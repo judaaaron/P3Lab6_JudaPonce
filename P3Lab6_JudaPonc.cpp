@@ -181,33 +181,77 @@ int main(int argc, char** argv) {
 						}
 						
 						case 9:{
-							for(int i=0; i< toAdd.size(); i++){
-								Aldeano* aldeanoo = dynamic_cast<Aldeano*>(toAdd[i]);
-								if(aldeanoo==0){
-									Jinete* jinetee = dynamic_cast<Jinete*>(toAdd[i]);
-									if(jinetee==0){
-										Arqueros* arqueroo = dynamic_cast<Arqueros*>(toAdd[i]);
-										if(arqueroo==0){
-											Caballeros* caballeroo = dynamic_cast<Caballeros*>(toAdd[i]);
-											if(caballeroo!=0){
-												toAdd[i]->reloj();
-												if (toAdd[i]->getTiempo() == 4){
-													civilizacion[civil]->getHola().push_back(toAdd[i]);
-													cout << "Caballero creado exitosamente" << endl;
-													delete toAdd[i];
-													//civilizaciones[u]->getHabitantes().push_back(pendientes[i]);
-													}	
-											}
-										}
+								for (int i = 0; i < toAdd.size(); i++){
+					Aldeano* ptrAldeano = dynamic_cast<Aldeano*>(toAdd[i]);
+					if (ptrAldeano == 0){
+						
+						Jinete* ptrJinete = dynamic_cast<Jinete*>(toAdd[i]);
+						
+						if (ptrJinete == 0){
+							
+							Arqueros* ptrArquero = dynamic_cast<Arqueros*>(toAdd[i]);
+							
+							if (ptrArquero == 0){
+								
+								Caballeros* ptrCaballero = dynamic_cast<Caballeros*>(toAdd[i]);
+								
+								if (ptrCaballero != 0){
+									
+									toAdd[i]->reloj();
+									if (toAdd[i]->getTiempo() == 4){
+										civilizacion[civil]->getHola().push_back(new Caballeros());
+										cout << "Se ha añadido un Caballero!" << endl;
+										civilizacion[civil]->setHabitantes(1);
+										toAdd.erase(toAdd.begin() + i);
 									}
+									
+									
 								}
+								
+							} else {
+								toAdd[i]->reloj();
+								if (toAdd[i]->getTiempo() == 4){
+									civilizacion[civil]->getHola().push_back(new Arqueros());
+									cout << "Se ha agregado un Arquero!" << endl;
+									civilizacion[civil]->setHabitantes(1);
+								
+								}
+								
+								
 							}
 							
-							break;
+						} else {
+							toAdd[i]->reloj();
+							if (toAdd[i]->getTiempo() == 6){
+								civilizacion[civil]->getHola().push_back(new Jinete());
+								cout << "Se ha agregado un Jinete!" << endl;
+								civilizacion[civil]->setHabitantes(1);
+
+							
+							}
+							
+							
+						}
+						
+					} else {
+						toAdd[i]->reloj();
+						if (toAdd[i]->getTiempo() == 1){
+							civilizacion[civil]->getHola().push_back(new Aldeano());
+							cout << "Se ha agregado un aldeano!" << endl;
+							civilizacion[civil]->setHabitantes(1);
+;
 						}
 					}
+	
+				
 						}
-						else{
+							
+							
+							break;
+				
+				}
+					}
+						}else{
 							cout<<endl<<"Opcion incorrecta, elija nuevamente "<<endl;	
 						}
 					
